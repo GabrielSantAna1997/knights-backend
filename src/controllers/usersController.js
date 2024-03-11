@@ -1,10 +1,5 @@
 import CharacterModel from "../models/Character.js";
 import { isValidObjectId } from 'mongoose';
-import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken"
-import * as dotenv from 'dotenv'
-
-dotenv.config()
 
 class UserController {
     static createUser = async (req, res) => {
