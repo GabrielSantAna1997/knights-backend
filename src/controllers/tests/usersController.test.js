@@ -144,4 +144,16 @@ describe('UserController', () => {
     });
   });
 
+  describe('updateKnightToHero', () => {
+    it('deve retornar status 400 para ID de cavaleiro inválido', async () => {
+      const req = { params: { id: 'invalid_id' }, body: { nickname: 'Sir Lancelot the Brave' } };
+      const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
+
+      await UserController.updateKnightNickname(req, res);
+
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({ message: 'Invalid knight ID' });
+    });
+});
+
 });

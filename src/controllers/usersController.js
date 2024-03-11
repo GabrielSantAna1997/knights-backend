@@ -73,6 +73,25 @@ class UserController {
             res.status(500).json({ message: error.message });
         }
     };
+    static updateKnightToHero = async (req, res) => {
+        try {
+            const knightId = req.params.id;
+
+            if (!isValidObjectId(knightId)) {
+                return res.status(400).json({ message: "Invalid knight ID" });
+            }
+
+            const updatedKnight = await CharacterModel.findByIdAndUpdate(knightId, { type: 'hero' }, { new: true });
+
+            if (!updatedKnight) {
+                return res.status(404).json({ message: "Knight not found" });
+            }
+
+            res.json(updatedKnight);
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
+    };
 }
 
 export default UserController;

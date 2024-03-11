@@ -9,5 +9,6 @@ router
     .get("/knights/:id", UserController.getKnightById)
     .delete("/knights/:id", UserController.removeKnight)
     .put("/knights/:id", UserController.updateKnightNickname)
+    .put("/knights/hero/:id", UserController.updateKnightToHero)
     
 export default router;
