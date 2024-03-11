@@ -26,7 +26,7 @@ nodemon server.js
 
 ## Organização dos arquivos
 
-- A configuração do banco de dados está localizada em `src/config/dbConnect.js.`
+- A configuração do banco de dados está localizada em `src/config/dbConnect.js.` (A URL configurada no banco foi utilizada para testes e não está operacional. Será necessário criar uma nova URL ou solicitar acesso ao desenvolvedor.")
 
 - Foi desenvolvida uma estrutura de controladores (controllers) e modelos (models). Os controladores estão localizados em `src/controllers` e os modelos em `/src/models`.
 
